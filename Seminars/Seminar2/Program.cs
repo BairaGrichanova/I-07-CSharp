@@ -9,7 +9,9 @@ int FindBiggerDigit(int number)
     else return(des);
 }
 
-int rand = new Random().Next (10,99);
+int rand = new Random().Next (10,100);
 
-Console.WriteLine(rand);
-Console.WriteLine (FindBiggerDigit(rand));
+Console.WriteLine("Случайное двузначное число: "+rand);
+Console.WriteLine ("Наибольшая цифра в числе, это: "+FindBiggerDigit(rand));
+
+// Задача 2. 
