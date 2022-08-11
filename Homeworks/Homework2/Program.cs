@@ -14,11 +14,12 @@ Task10 (n);
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 /*
-void Task13 (int number)
+void Task13 (long number)
 {
-    int result = 0;
-    int razr = 100;
-    if (number < 100 & number > -100) Console.WriteLine ($"Введённое число: {number}, третьей цифры в числе нет");
+    if (number < 0) number = number * (-1);
+    long result = 0;
+    long razr = 100;
+    if (number < 100) Console.WriteLine ($"Введённое число: {number}, третьей цифры в числе нет");
     else 
     {
         while (razr < number) 
@@ -30,8 +31,8 @@ void Task13 (int number)
     }
 }
 
-Console.Write ("Введите целое число от -2 147 483 648 до 2 147 483 647: ");
-int n = Convert.ToInt32 (Console.ReadLine ());
+Console.Write ("Введите целое число: ");
+long n = Convert.ToInt64 (Console.ReadLine ());
 
 Task13 (n);
 */
