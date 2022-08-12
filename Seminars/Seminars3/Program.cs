@@ -15,7 +15,7 @@ if (qart>0 && qart<5) DiapCoordin (qart); else Console.WriteLine ("ошибка"
 */
 // Задача 3. Напишите программу, которая принимает на вход координаты двух точек 
 // и находит расстояние между ними в 2D пространстве.
-
+/*
 double LengthT (int x1, int y1, int x2, int y2)
 {
 
@@ -23,7 +23,7 @@ double LengthT (int x1, int y1, int x2, int y2)
     return rezult;
 
 }
-/*
+
 Console.WriteLine ("Введите координаты двух точек");
 Console.WriteLine ("Введите x1: ");
 int x11 = Convert.ToInt32 (Console.ReadLine());
