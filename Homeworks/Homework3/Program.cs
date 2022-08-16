@@ -50,3 +50,14 @@ int z2 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine ("Расстояние между двумя точками - "+Distance(x1,x2,y1,y2,z1,z2));
 */
 
+// Task 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+/*
+long Kub (long x)
+{
+    return x*x*x;
+}
+
+Console.Write ("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+for (int i=1; i<=n; i++) Console.WriteLine (Kub(i));
+*/
