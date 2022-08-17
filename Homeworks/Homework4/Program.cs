@@ -8,7 +8,7 @@ long Stepen (int n, int x)
     return s;
 }
 
-Console.WriteLine ("Программа возведения числа в степень. Для выхода из программы нажмите Ctrl+C");
+Console.WriteLine ("Программа возведения числа в степень.");
 Console.Write ("Введите число (А): ");
 int a = Convert.ToInt32(Console.ReadLine());
 Console.Write ("Введите степень (В): ");
