@@ -61,6 +61,7 @@ Console.Write ("Наш массив: ");
 Console.WriteLine();
 }
 
+Console.Write ("Программа для создания и заполнения массива целых чисел.");
 Console.Write ("Введите количество элементов в массиве ARRAY[0..N-1]: ");
 int a = Convert.ToInt32(Console.ReadLine());
 
