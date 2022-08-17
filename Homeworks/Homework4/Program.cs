@@ -61,7 +61,7 @@ Console.Write ("Наш массив: ");
 Console.WriteLine();
 }
 
-Console.Write ("Введите количество элементов в массиве ARRAY[]: ");
+Console.Write ("Введите количество элементов в массиве ARRAY[0..N-1]: ");
 int a = Convert.ToInt32(Console.ReadLine());
 
 int[] myArray = CreateArray (a);
