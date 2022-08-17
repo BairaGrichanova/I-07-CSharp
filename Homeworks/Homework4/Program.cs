@@ -1,6 +1,6 @@
-﻿// Task 25. Напишите цикл, который принимает на вход два числа (A и B) и 
-// возводит число A в натуральную степень B.
-
+﻿// Task 25. Напишите цикл, который принимает на вход два числа (A и B) и возводит число A 
+// в натуральную степень B.
+/*
 long Stepen (int n, int x)
 {
     long s=1;
@@ -15,3 +15,26 @@ Console.Write ("Введите степень (В): ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine ($"Число {a} в степени {b} будет равно {Stepen (a,b)}");
+*/
+
+// Task 27. Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
+int SumNumber (int n)
+{
+    int sum = 0;
+
+    while (n > 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+Console.WriteLine ("Программа подсчёта суммы цифр в числе.");
+Console.Write ("Введите целое число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine ($"Сумма цифр в числе {number} будет равна {SumNumber (number)}");
+*/
+
