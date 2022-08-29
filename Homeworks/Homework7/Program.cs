@@ -109,20 +109,20 @@ void Show2DArray(int[,] array)
         Console.WriteLine();
     }
 }
-void SumByColums (int[,] array)
+void AverageByColums(int[,] array)
 {
-    int sum;
-    for (int i=0; i<array.GetLength(1);i++)
+    double sum;
+    for (int i = 0; i < array.GetLength(1); i++)
     {
-        sum=0;
-        for (int k=0; k<array.GetLength(0);k++)
-            {
-                sum+=array[k,i];
-            }
-        Console.Write (sum+" ");
+        sum = 0;
+        for (int k = 0; k < array.GetLength(0); k++)
+        {
+            sum += array[k, i];
+        }
+        sum /= array.GetLength(1);
+        sum -= sum % 0.1;
+        Console.Write(sum + " ");
     }
-
-
 }
 
 Console.Write("Введите количество строк: ");
@@ -135,5 +135,5 @@ Console.Write("Введите максимальное значение: ");
 int max = Convert.ToInt32(Console.ReadLine());
 int[,] myArray = CreateRandom2DArray(m, n, min, max);
 Show2DArray(myArray);
-Console.WriteLine("Сумма столбцов: ");
-SumByColums (myArray);
+Console.WriteLine("Средне арифметическое по столбцам: ");
+AverageByColums(myArray);
