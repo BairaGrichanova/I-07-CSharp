@@ -112,15 +112,15 @@ void Show2DArray(int[,] array)
 void AverageByColums(int[,] array)
 {
     double sum;
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         sum = 0;
-        for (int k = 0; k < array.GetLength(0); k++)
+        for (int k = 0; k < array.GetLength(1); k++)
         {
             sum += array[k, i];
         }
         sum /= array.GetLength(1);
-        sum -= sum % 0.1;
+        Math.Round (sum,1);
         Console.Write(sum + " ");
     }
 }
