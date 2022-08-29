@@ -63,7 +63,7 @@ Show2DArray(myArray);
 */
 
 // Задать двумерный массив, найти элементы, у которых оба индекса чётные, и возвести эти элементы в квадрат
-
+/*
 int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
 {
     int[,] newArray = new int[rows, columns];
@@ -102,10 +102,10 @@ Show2DArray(myArray);
 Console.WriteLine();
 myArray = Replace2DArray(myArray);
 Show2DArray(myArray);
-
+*/
 
 // Необходимо задать двумерный массив и найти сумму элементов на главной диагонали (индексы совпадают)
-/*
+
 int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
 {
     int[,] newArray = new int[rows, columns];
@@ -118,9 +118,7 @@ int SumMainDiagonal(int[,] newArray)
 {
     int result =0;
     for (int i = 0; i < newArray.GetLength(0); i++)
-        for (int k = 0; k < newArray.GetLength(1); k++)
-            if (i == k)
-                result += newArray[i, k];
+        result += newArray[i, i];
     return result;
 }
 void Show2DArray(int[,] array)
@@ -145,4 +143,3 @@ int[,] myArray = CreateRandom2DArray(m, n, min, max);
 Show2DArray(myArray);
 int sum = SumMainDiagonal (myArray);
 Console.WriteLine("Сумма чисел на главной диагонали равняется "+sum);
-*/
