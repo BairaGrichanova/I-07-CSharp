@@ -84,3 +84,56 @@ int f2 = Convert.ToInt32(Console.ReadLine());
 
 SearchByCoordinates(myArray,f1,f2);
 */
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int k = 0; k < columns; k++)
+            newArray[i, k] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
+void Show2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int k = 0; k < array.GetLength(1); k++)
+            Console.Write(array[i, k] + " ");
+        Console.WriteLine();
+    }
+}
+void SumByColums (int[,] array)
+{
+    int sum;
+    for (int i=0; i<array.GetLength(1);i++)
+    {
+        sum=0;
+        for (int k=0; k<array.GetLength(0);k++)
+            {
+                sum+=array[k,i];
+            }
+        Console.Write (sum+" ");
+    }
+
+
+}
+
+Console.Write("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите минимальное значение: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите максимальное значение: ");
+int max = Convert.ToInt32(Console.ReadLine());
+int[,] myArray = CreateRandom2DArray(m, n, min, max);
+Show2DArray(myArray);
+Console.WriteLine("Сумма столбцов: ");
+SumByColums (myArray);
