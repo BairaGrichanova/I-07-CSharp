@@ -9,9 +9,63 @@
 // 9 5 3 2
 // 8 4 4 2
 // ________________________________________
+/*
+int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int k = 0; k < columns; k++)
+            newArray[i, k] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
 
+void Show2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int k = 0; k < array.GetLength(1); k++)
+            Console.Write(array[i, k] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
 
+int[,] SortingArraysRowsDown(int[,] array)
+{
+    int tmp,
+        alength = array.GetLength(1),
+        blength = array.GetLength(0),
+        i, j, k;
 
+    for (k = 0; k < blength; k++)
+        for (i = 0; i < alength; i++)
+        {
+            for (j = i + 1; j < alength; j++)
+            {
+                if (array[k, i] < array[k, j])
+                {
+                    tmp = array[k, i];
+                    array[k, i] = array[k, j];
+                    array[k, j] = tmp;
+                }
+            }
+        }
+    return array;
+}
+
+Console.Write("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное значение: 0");
+int min = 0;
+Console.WriteLine("Введите максимальное значение: 9");
+int max = 9;
+int[,] myArray = CreateRandom2DArray(m, n, min, max);
+Show2DArray(myArray);
+myArray = SortingArraysRowsDown(myArray);
+Show2DArray(myArray);
+*/
 // ________________________________________
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 // Например, задан массив:
