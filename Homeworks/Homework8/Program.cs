@@ -282,28 +282,28 @@ string[,] Fill2dArrayAsSnake(string[,] array, int n)
         for (i=y1; i<=y2; i++) 
         {
             array[x1,i]=Convert.ToString(tmp);
-            if (tmp<10) array[x1,i] = " " + array[x1,i];
+            if (tmp<10) array[x1,i] = "0" + array[x1,i];
             tmp++;
         }
         x1++;
         for (i=x1; i<=x2; i++)
         {
             array[i,y2]=Convert.ToString(tmp);
-            if (tmp<10) array[i,y2] = " " + array[i,y2];
+            if (tmp<10) array[i,y2] = "0" + array[i,y2];
             tmp++;
         }
         y2--;
         for (i=y2; i>=y1; i--)
         {
             array[x2,i]=Convert.ToString(tmp);
-            if (tmp<10) array[x2,i] = " " + array[x2,i];
+            if (tmp<10) array[x2,i] = "0" + array[x2,i];
             tmp++;
         }
         x2--;
         for (i=x2; i>=x1; i--)
         {
             array[i,y1]=Convert.ToString(tmp);
-            if (tmp<10) array[x2,i] = " " + array[x2,i];
+            if (tmp<10) array[x2,i] = "0" + array[x2,i];
             tmp++;
         }
         y1++;
