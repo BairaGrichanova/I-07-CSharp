@@ -277,36 +277,36 @@ string[,] Fill2dArrayAsSnake(string[,] array, int n)
         y2=n-1, // координаты (последний столбец)
         tmp=1;  // счётчик-наполнитель
     
-    while (tmp<=n*n)
+    while (tmp<=n*n)            // пока числа не закончатся :)
     {
-        for (i=y1; i<=y2; i++) 
+        for (i=y1; i<=y2; i++)  // заполняем верхнюю строку
         {
             array[x1,i]=Convert.ToString(tmp);
             if (tmp<10) array[x1,i] = "0" + array[x1,i];
             tmp++;
         }
-        x1++;
-        for (i=x1; i<=x2; i++)
+        x1++;                   // сдвигаем координаты верхней строки на 1 вниз
+        for (i=x1; i<=x2; i++)  // заполняем правый столбец
         {
             array[i,y2]=Convert.ToString(tmp);
             if (tmp<10) array[i,y2] = "0" + array[i,y2];
             tmp++;
         }
-        y2--;
-        for (i=y2; i>=y1; i--)
+        y2--;                   // сдвигаем координаты правого столбца на 1 влево
+        for (i=y2; i>=y1; i--)  // заполняем нижнюю строку
         {
             array[x2,i]=Convert.ToString(tmp);
             if (tmp<10) array[x2,i] = "0" + array[x2,i];
             tmp++;
         }
-        x2--;
-        for (i=x2; i>=x1; i--)
+        x2--;                   // сдвигаем координаты нижней строки на 1 вверх
+        for (i=x2; i>=x1; i--)  // заполняем левый столбец
         {
             array[i,y1]=Convert.ToString(tmp);
-            if (tmp<10) array[x2,i] = "0" + array[x2,i];
+            if (tmp<10) array[i,y1] = "0" + array[i,y1];
             tmp++;
         }
-        y1++;
+        y1++;                   // сдвигаем координаты левого столбца на 1 вправо
     }
     Console.WriteLine();
     return array;
