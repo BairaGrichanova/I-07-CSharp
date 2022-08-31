@@ -256,3 +256,64 @@ Show3dArray(myArray);
 // 11 16 15 06
 // 10 09 08 07
 // ________________________________________
+
+void Show2DArray(string[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int k = 0; k < array.GetLength(1); k++)
+            Console.Write(array[i, k] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+string[,] Fill2dArrayAsSnake(string[,] array, int n)
+{
+    int i,      // счётчик
+        x1=0,   // координаты (первая строка)
+        x2=n-1, // координаты (последняя строка)
+        y1=0,   // координаты (первый столбец)
+        y2=n-1, // координаты (последний столбец)
+        tmp=1;  // счётчик-наполнитель
+    
+    while (tmp<=n*n)
+    {
+        for (i=y1; i<=y2; i++) 
+        {
+            array[x1,i]=Convert.ToString(tmp);
+            if (tmp<10) array[x1,i] = " " + array[x1,i];
+            tmp++;
+        }
+        x1++;
+        for (i=x1; i<=x2; i++)
+        {
+            array[i,y2]=Convert.ToString(tmp);
+            if (tmp<10) array[i,y2] = " " + array[i,y2];
+            tmp++;
+        }
+        y2--;
+        for (i=y2; i>=y1; i--)
+        {
+            array[x2,i]=Convert.ToString(tmp);
+            if (tmp<10) array[x2,i] = " " + array[x2,i];
+            tmp++;
+        }
+        x2--;
+        for (i=x2; i>=x1; i--)
+        {
+            array[i,y1]=Convert.ToString(tmp);
+            if (tmp<10) array[x2,i] = " " + array[x2,i];
+            tmp++;
+        }
+        y1++;
+    }
+    Console.WriteLine();
+    return array;
+}
+
+Console.Write("Задайте размер матрицы: ");
+int n = Convert.ToInt32(Console.ReadLine());
+string[,] myArray = new string[n, n];
+myArray = Fill2dArrayAsSnake(myArray,n);
+Show2DArray(myArray);
