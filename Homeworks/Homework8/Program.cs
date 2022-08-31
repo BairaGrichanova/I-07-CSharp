@@ -75,6 +75,73 @@ Show2DArray(myArray);
 // 5 2 6 7
 // Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 // ________________________________________
+/*
+int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int k = 0; k < columns; k++)
+            newArray[i, k] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
+
+void Show2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int k = 0; k < array.GetLength(1); k++)
+            Console.Write(array[i, k] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int NumberOfRowWithMinSum(int[,] array)
+{
+    int n, tmp = 0,                   // вспомогательные переменные   
+        alength = array.GetLength(1), // количество элементов в строке (столбцов)
+        blength = array.GetLength(0), // количество строк
+        i, j;                         // счётчики
+    int[] newArray = new int[blength];// суммы строк складываем в одномерный массив
+
+    for (i = 0; i < blength; i++)
+    {
+        newArray[i] = 0;
+        for (j = 0; j < alength; j++)
+        {
+            newArray[i] += array[i, j];
+        }
+    }
+
+    n = newArray[0];
+    Console.Write ("Строка[0]="+newArray[0]+" | ");
+    for (i = 1; i < blength; i++)
+    {
+        Console.Write ("Строка["+i+"]="+newArray[i]+" | ");
+
+        if (n > newArray[i])
+        {
+            n = newArray[i];
+            tmp = i;
+        }
+    }
+    Console.WriteLine();
+
+    return tmp;
+}
+
+Console.Write("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное значение: 0");
+int min = 0;
+Console.WriteLine("Введите максимальное значение: 9");
+int max = 9;
+int[,] myArray = CreateRandom2DArray(m, n, min, max);
+Show2DArray(myArray);
+Console.Write("Наименьшая сумма элементов в "+NumberOfRowWithMinSum(myArray)+" строке");
+*/
 // ________________________________________
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 // Например, даны 2 матрицы:
@@ -84,6 +151,52 @@ Show2DArray(myArray);
 // 18 20
 // 15 18
 // ________________________________________
+/*
+int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int k = 0; k < columns; k++)
+            newArray[i, k] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
+
+void Show2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int k = 0; k < array.GetLength(1); k++)
+            Console.Write(array[i, k] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[,] MultiplyMatrix(int[,] array1, int[,] array2, int n)
+{
+    int i, j;                         // счётчики
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            array1[i, j] *= array2[i, j];
+    return array1;
+}
+
+Console.Write("Введите размер матриц: ");
+int m = Convert.ToInt32(Console.ReadLine());
+//int n = m;
+Console.WriteLine("Введите минимальное значение: 0");
+int min = 0;
+Console.WriteLine("Введите максимальное значение: 3");
+int max = 3;
+int[,] myArray1 = CreateRandom2DArray(m, m, min, max);
+int[,] myArray2 = CreateRandom2DArray(m, m, min, max);
+Console.WriteLine("Первая матрица:");
+Show2DArray(myArray1);
+Console.WriteLine("Вторая матрица:");
+Show2DArray(myArray2);
+Console.WriteLine("Произведение двух матриц:");
+Show2DArray(MultiplyMatrix(myArray1,myArray2,m));
+*/
 // ________________________________________
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 // Массив размером 2 x 2 x 2
