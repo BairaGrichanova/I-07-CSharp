@@ -205,6 +205,49 @@ Show2DArray(MultiplyMatrix(myArray1,myArray2,m));
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 // ________________________________________
+/*
+int[,,] Fill3dArray(int[,,] array)
+{
+    int tmp = 10,
+        i, j, k;
+    for (i = 0; i < array.GetLength(0); i++)
+        for (j = 0; j < array.GetLength(1); j++)
+            for (k = 0; k < array.GetLength(2); k++)
+            {
+                array[i, j, k] = tmp;
+                tmp++;
+            }
+    return array;
+}
+
+void Show3dArray(int[,,] array)
+{
+    int i, j, k;
+    for (i = 0; i < array.GetLength(0); i++)
+    {
+        for (j = 0; j < array.GetLength(1); j++)
+        {
+            for (k = 0; k < array.GetLength(2); k++)
+                Console.Write($"{array[i, j, k]}({i},{j},{k}) ");
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.WriteLine("Задайте параметры 3-х-мерного массива.");
+Console.WriteLine("Общее количество элементов в массиве не должно превышать 90.");
+Console.WriteLine("Например: 3 х 3 х 10");
+Console.Write("Введите количество таблиц в массиве: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество строк в таблице: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов таблице: ");
+int o = Convert.ToInt32(Console.ReadLine());
+int[,,] myArray = new int[m, n, o];
+myArray = Fill3dArray(myArray);
+Show3dArray(myArray);
+*/
 // ________________________________________
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4. 
 // Например, на выходе получается вот такой массив:
